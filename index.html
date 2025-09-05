@@ -1,9 +1,7 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sunny Time</title>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,17 +9,75 @@
 {
   "imports": {
     "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
-    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "vite": "https://aistudiocdn.com/vite@^7.1.4",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.0.2",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
   }
 }
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-        <h1>¡Hola, mundo!</h1>
-    <p>Si ves esto, el servidor funciona correctamente.</p>
-  </body>
+  <body class="bg-gradient-to-br from-sky-300 via-blue-400 to-sky-300">
+    <main class="flex flex-col items-center justify-center min-h-screen text-white p-4 overflow-hidden">
+      <div class="w-full max-w-5xl mx-auto bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-6 md:p-10">
+        <div class="flex flex-col md:flex-row items-center justify-around gap-8 md:gap-16">
+          
+          <!-- SmileyFace SVG -->
+          <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+            <svg
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+              class="drop-shadow-lg"
+            >
+              <circle cx="50" cy="50" r="48" fill="#FFD700" stroke="#FDB813" strokeWidth="4" />
+              <circle cx="35" cy="40" r="5" fill="#2c2c2c" />
+              <circle cx="65" cy="40" r="5" fill="#2c2c2c" />
+              <path
+                d="M 30 65 Q 50 80 70 65"
+                stroke="#2c2c2c"
+                strokeWidth="5"
+                fill="transparent"
+                strokeLinecap="round"
+              />
+            </svg>
+          </div>
+
+          <!-- Clock container -->
+          <div id="clock-container" class="flex flex-col items-center justify-center text-center text-slate-800 order-first md:order-none">
+            <!-- Clock content is injected by JavaScript -->
+          </div>
+          
+          <!-- SunnyLandscape SVG -->
+          <div class="w-32 h-32 md:w-48 md:h-48 flex-shrink-0">
+            <svg
+              viewBox="0 0 100 100"
+              xmlns="http://www.w3.org/2000/svg"
+              class="drop-shadow-lg rounded-full"
+            >
+              <rect width="100" height="100" fill="#87CEEB" />
+              <circle cx="25" cy="25" r="15" fill="#FFD700">
+                <animateTransform 
+                  attributeName="transform"
+                  type="rotate"
+                  from="0 25 25"
+                  to="360 25 25"
+                  dur="20s"
+                  repeatCount="indefinite"
+                />
+              </circle>
+              <path d="M -10 80 Q 25 50 60 75 T 110 70 V 100 H -10 Z" fill="#32CD32" />
+              <path d="M -10 90 Q 40 70 70 85 T 110 80 V 100 H -10 Z" fill="#228B22" />
+            </svg>
+          </div>
+
+        </div>
+      </div>
+      <footer class="mt-8 text-center text-white/70 text-sm">
+        <p>Crafted with Vanilla JS & Tailwind CSS</p>
+      </footer>
+    </main>
+    <script type="module" src="./index.tsx"></script>
+  <script type="module" src="/index.tsx"></script>
+</body>
 </html>
